@@ -26,9 +26,8 @@ jobs:
 
       - name: Install Buildozer
         run: |
-          python3 -m venv .venv
-          .venv/bin/pip install --upgrade pip
-          .venv/bin/pip install buildozer cython==0.29.34
+          python3 -m pip install --user             buildozer==1.6.0 cython==0.29.34
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH" 
 
       - name: Test calculator
         run: |
@@ -37,9 +36,11 @@ jobs:
 
       - name: Build APK
         run: |
-          export PATH="$PWD/.venv/bin:$PATH"
+          export PATH="$HOME/.local/bin:$PATH"
+          command -v buildozer
           command -v cython
           cython --version
+          python3 -m pip --version
           buildozer -v android debug
 
       - name: Upload APK
