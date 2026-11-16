@@ -5,7 +5,7 @@ package.domain = online.slickk
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 version = 1.0.0
-requirements = python3,kivy==2.3.1
+requirements = python3==3.13.5,kivy==2.3.1
 orientation = portrait
 fullscreen = 0
 android.minapi = 24
