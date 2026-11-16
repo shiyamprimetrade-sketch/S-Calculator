@@ -41,7 +41,7 @@ jobs:
           command -v cython
           cython --version
           python3 -m pip --version
-          buildozer -v android debug
+          PIP_PLATFORM=android_24_arm64_v8a buildozer -v android debug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
