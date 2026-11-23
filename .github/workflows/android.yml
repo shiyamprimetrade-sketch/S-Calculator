@@ -2,7 +2,7 @@ name: Build S-Calculator APK
 
 on:
   push:
-    branches: [main]
+    branches: [main, 'upgrade/**']
   workflow_dispatch:
 
 jobs:
